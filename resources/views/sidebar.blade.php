@@ -83,11 +83,11 @@
                                 <a href="{{ url('ListOrder') }}">List Order</a>
                             </li>
                             @endif
-                            {{-- @if(session()->has('mnuListOrder')) --}}
+                            @if(session()->has('mnuOutstandingDeliv'))
                             <li id='OutstandingDeliv'>
                                 <a href="{{ url('OutstandingDeliv') }}">Outstanding Delivery</a>
                             </li>
-                            {{-- @endif --}}
+                            @endif
                         </ul>
                     </li>
 
