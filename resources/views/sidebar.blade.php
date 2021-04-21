@@ -83,6 +83,11 @@
                                 <a href="{{ url('ListOrder') }}">List Order</a>
                             </li>
                             @endif
+                            {{-- @if(session()->has('mnuListOrder')) --}}
+                            <li id='OutstandingDeliv'>
+                                <a href="{{ url('OutstandingDeliv') }}">Outstanding Delivery</a>
+                            </li>
+                            {{-- @endif --}}
                         </ul>
                     </li>
 

@@ -645,7 +645,7 @@ tr.shown td.details-control {
                                     <tr>
                                         <th>No.</th>
                                         <th>Status</th>
-                                        <th>Book.Id</th>
+                                        <th>Book/Order ID</th>
                                         <th>Date</th>
                                         <th>Customer</th>
                                         <th>Sales Person</th>

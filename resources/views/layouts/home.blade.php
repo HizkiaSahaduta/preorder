@@ -537,198 +537,201 @@ hr.style {
     <div class="row layout-top-spacing">
 
       
+        @if(Session::get('GROUPID') == 'CUSTOMER')
        
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
-            <div class="card component-card_1">
-                <div class="card-body" id="NotShipYet">    
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="card component-card_1">
+                    <div class="card-body" id="NotShipYet">    
 
-                    <div class="icon-svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    </div>
-                    <h5 class="card-title" style="font-size: 20px">Live Orders</h5>
-                    <div class="widget-account-invoice-one">
-                        <div class="invoice-box">
-                            <div class="inv-detail">      
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Numbers of Orders</p>
-                                    <p class="text-primary">0</p>
-                                </div>                                  
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Weight</p>
-                                    <p class="text-primary">0</p>
-                                </div>
-                            </div>
+                        <div class="icon-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         </div>
-                    </div>
-                    <p class="card-text text-danger">N/A</p>
-                    
-                </div>
-            </div>
-        </div>    
-        
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
-            <div class="card component-card_1">
-                <div class="card-body" id="UnpaidInv">
-
-                    <div class="icon-svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                    </div>
-                    <h5 class="card-title" style="font-size: 20px">Account Deb</h5>
-                    <div class="widget-account-invoice-one">
-                        <div class="invoice-box">
-                            <div class="inv-detail">      
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Numbers of Invoices</p>
-                                    <p class="text-primary">0</p>
-                                </div>                                  
-                                <div class="info-detail-1">
-                                    <p class="text-primary">IDR-Million</p>
-                                    <p class="text-primary">0</p>
+                        <h5 class="card-title" style="font-size: 20px">Live Orders</h5>
+                        <div class="widget-account-invoice-one">
+                            <div class="invoice-box">
+                                <div class="inv-detail">      
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Numbers of Orders</p>
+                                        <p class="text-primary">0</p>
+                                    </div>                                  
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Weight</p>
+                                        <p class="text-primary">0</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="card-text text-danger">N/A</p>
-
-                </div>
-            </div>
-        </div>    
-
-
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
-            <div class="card component-card_1">
-                <div class="card-body" id="ReadyToShip">    
-
-                    <div class="icon-svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    </div>
-                    
-                    <h5 class="card-title" style="font-size: 20px">PPP (Coil Ready)</h5>
-                    <div class="widget-account-invoice-one">
-                        <div class="invoice-box">
-                            <div class="inv-detail">      
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Numbers of PPP</p>
-                                    <p class="text-primary">0</p>
-                                </div>                                  
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Weight</p>
-                                    <p class="text-primary">0</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="card-text text-danger">N/A</p>
-
-                </div>
-            </div>
-        </div> 
-        
-        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
-            <div class="card component-card_1">
-                <div class="card-body">
-            
-                    <div class="widget-account-invoice-one" id="Last12Mo">
-
-
-                        <div class="invoice-box">
-                            <div class="acc-total-info">
-                                <h5>Last 12 Month</h5>
-                                <h5>IDR-Million</h5>
-                                {{-- <p class="acc-amount text-danger">0</p> --}}
-                            </div>
-
-                            <div class="inv-detail">      
-                                <div class="info-detail-1">
-                                    <p class="text-primary">Total</p>
-                                    <p class="text-primary">0</p>
-                                </div>                                  
-                                <div class="info-detail-1">
-                                    <p class="text-warning">Total Paid</p>
-                                    <p class="text-warning">0</p>
-                                </div>
-                                <div class="info-detail-1">
-                                    <p class="text-danger">Total Debt</p>
-                                    <p class="text-danger">0</p>
-                                </div>
-                            </div>
-                            
                         </div>
                         <p class="card-text text-danger">N/A</p>
                         
                     </div>
                 </div>
-            </div>
-        </div>   
+            </div>    
+            
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="card component-card_1">
+                    <div class="card-body" id="UnpaidInv">
 
+                        <div class="icon-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </div>
+                        <h5 class="card-title" style="font-size: 20px">Account Deb</h5>
+                        <div class="widget-account-invoice-one">
+                            <div class="invoice-box">
+                                <div class="inv-detail">      
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Numbers of Invoices</p>
+                                        <p class="text-primary">0</p>
+                                    </div>                                  
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">IDR-Million</p>
+                                        <p class="text-primary">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="card-text text-danger">N/A</p>
 
-        {{-- ################################################################## --}}
-
-        {{-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 layout-spacing">
-            <div class="widget widget-activity-three">
-                <div class="widget-heading">
-                    <h5 class="">List Order Not Shipping Yet</h5>.
-                </div>
-                <div class="widget-content">
-                    <div class="mt-container mx-auto">
-                        <div class="timeline-line" id="ListNotShipYet">                                 
-                        </div>                                    
                     </div>
                 </div>
-            </div>
-        </div> --}}
+            </div>    
 
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
-            <div class="widget widget-activity-three">
-                <div class="widget-heading">
-                    <h5 class="">Amount and Weight Order Summary (Last 12 Month)</h5>
-                    {{-- <p class="badge badge-primary">by Cust.Group</p> --}}
-                </div>
-                <div class="widget-content">
-                    <div class="mt-container mx-auto">
-                        <div class="timeline-line"> 
-                            {{-- <div class="item-timeline timeline-new" id="ResultAmtOrder">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="card component-card_1">
+                    <div class="card-body" id="ReadyToShip">    
 
-                                <div class="t-dot">
-                                    <div class="t-info"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <div class="icon-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        </div>
+                        
+                        <h5 class="card-title" style="font-size: 20px">PPP (Coil Ready)</h5>
+                        <div class="widget-account-invoice-one">
+                            <div class="invoice-box">
+                                <div class="inv-detail">      
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Numbers of PPP</p>
+                                        <p class="text-primary">0</p>
+                                    </div>                                  
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Weight</p>
+                                        <p class="text-primary">0</p>
                                     </div>
                                 </div>
-                                <div class="t-content">
-                                    <div class="t-uppercontent">
-                                        <h5>Amount Order (/item)</h5>
-                                    </div>
-                                </div>
-
-                            </div> --}}
-
-                            {{-- <div class="widget-content">
-                                <div id="chartContainer1" style="height: 225px; width: 100%;"></div>
                             </div>
-                            --}}
-                            <div class="item-timeline timeline-new" id="ResultWgtOrder">
+                        </div>
+                        <p class="card-text text-danger">N/A</p>
 
-                                <div class="t-dot">
-                                    <div class="t-warning"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                                    </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 layout-spacing">
+                <div class="card component-card_1">
+                    <div class="card-body">
+                
+                        <div class="widget-account-invoice-one" id="Last12Mo">
+
+
+                            <div class="invoice-box">
+                                <div class="acc-total-info">
+                                    <h5>Last 12 Month</h5>
+                                    <h5>IDR-Million</h5>
+                                    {{-- <p class="acc-amount text-danger">0</p> --}}
                                 </div>
-                                <div class="t-content">
-                                    <div class="t-uppercontent">
-                                        <h5>Weight Order (/item)</h5>
-                                        {{-- <span class="listCust">{{ $month }}, {{ $year }}</span> --}}
+
+                                <div class="inv-detail">      
+                                    <div class="info-detail-1">
+                                        <p class="text-primary">Total</p>
+                                        <p class="text-primary">0</p>
+                                    </div>                                  
+                                    <div class="info-detail-1">
+                                        <p class="text-warning">Total Paid</p>
+                                        <p class="text-warning">0</p>
+                                    </div>
+                                    <div class="info-detail-1">
+                                        <p class="text-danger">Total Debt</p>
+                                        <p class="text-danger">0</p>
                                     </div>
                                 </div>
                                 
                             </div>
+                            <p class="card-text text-danger">N/A</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>   
 
-                            <div class="widget-content">
-                                <div id="chartContainer2" style="height: 225px; width: 100%;"></div>
-                            </div>                                                               
-                        </div>                                    
+
+            {{-- ################################################################## --}}
+
+            {{-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 layout-spacing">
+                <div class="widget widget-activity-three">
+                    <div class="widget-heading">
+                        <h5 class="">List Order Not Shipping Yet</h5>.
+                    </div>
+                    <div class="widget-content">
+                        <div class="mt-container mx-auto">
+                            <div class="timeline-line" id="ListNotShipYet">                                 
+                            </div>                                    
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                <div class="widget widget-activity-three">
+                    <div class="widget-heading">
+                        <h5 class="">Amount and Weight Order Summary (Last 12 Month)</h5>
+                        {{-- <p class="badge badge-primary">by Cust.Group</p> --}}
+                    </div>
+                    <div class="widget-content">
+                        <div class="mt-container mx-auto">
+                            <div class="timeline-line"> 
+                                {{-- <div class="item-timeline timeline-new" id="ResultAmtOrder">
+
+                                    <div class="t-dot">
+                                        <div class="t-info"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="t-content">
+                                        <div class="t-uppercontent">
+                                            <h5>Amount Order (/item)</h5>
+                                        </div>
+                                    </div>
+
+                                </div> --}}
+
+                                {{-- <div class="widget-content">
+                                    <div id="chartContainer1" style="height: 225px; width: 100%;"></div>
+                                </div>
+                                --}}
+                                <div class="item-timeline timeline-new" id="ResultWgtOrder">
+
+                                    <div class="t-dot">
+                                        <div class="t-warning"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div class="t-content">
+                                        <div class="t-uppercontent">
+                                            <h5>Weight Order (/item)</h5>
+                                            {{-- <span class="listCust">{{ $month }}, {{ $year }}</span> --}}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="widget-content">
+                                    <div id="chartContainer2" style="height: 225px; width: 100%;"></div>
+                                </div>                                                               
+                            </div>                                    
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        @endif
 
         {{-- ################################################################## --}}
 

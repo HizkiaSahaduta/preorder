@@ -121,6 +121,10 @@ Route::get('ImgDelete', 'UploadImgController@delete')->name('ImgDelete');
 Route::post('customerDashboard','HomeController@customerDashboard');
 Route::post('customerDashboardbyID','HomeController@customerDashboardbyID');
 
+//Outstanding
+Route::get('OutstandingDeliv', 'OutstandingDelivController@index')->name('OutstandingDeliv');
+Route::post('getOutstandingDeliv','OutstandingDelivController@getOutstandingDeliv');
+
 
 
 

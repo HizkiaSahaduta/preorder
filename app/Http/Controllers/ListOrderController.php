@@ -43,13 +43,13 @@ class ListOrderController extends Controller
 
             $data = DB::select(DB::raw("select DATE_FORMAT(a.tr_date, '%d %M %Y') as fr_date,
                     a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id
+                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id, a.order_id
                     from order_book_hdr a
                     join salesman b on a.salesman_id = b.salesman_id
                     join order_book_dtl c on a.book_id = c.book_id
                     $where and a.salesman_id = '$salesid'
                     group by a.tr_date, a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, a.image, a.quote_id order by a.tr_date desc"));
+                    a.cust_po_num, a.image, a.quote_id, a.order_id order by a.tr_date desc"));
 
             return \DataTables::of($data)
             ->editColumn('book_id', function ($data) {
@@ -85,7 +85,7 @@ class ListOrderController extends Controller
                 return '
                 <a href="javascript:void(0)" class="badge outline-badge-secondary trackingOrder" title="Tracking Order" data-id="'.$data->book_id.'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                    CLOSED
+                    SALES CONTRACT
                 </a>';
                 if ($data->stat == "X") 
                 return '
@@ -216,13 +216,13 @@ class ListOrderController extends Controller
 
             $data = DB::select(DB::raw("select DATE_FORMAT(a.tr_date, '%d %M %Y') as fr_date,
                     a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id
+                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id, a.order_id
                     from order_book_hdr a
                     join salesman b on a.salesman_id = b.salesman_id
                     join order_book_dtl c on a.book_id = c.book_id
                     $where and a.cust_id in ($list_custid) and a.salesman_id = '$salesid'
                     group by a.tr_date, a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, a.image, a.quote_id order by a.tr_date desc"));
+                    a.cust_po_num, a.image, a.quote_id, a.order_id order by a.tr_date desc"));
 
             // $data = DB::select(DB::raw("select x.descr, a.fr_date,
             //                 a.book_id, a.stat, a.salesman_id, a.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
@@ -241,7 +241,10 @@ class ListOrderController extends Controller
 
             return \DataTables::of($data)
             ->editColumn('book_id', function ($data) {
-            
+                if ($data->order_id != "" || $data->order_id)
+                return '<span class="badge badge-primary">'.$data->order_id.'</span>';
+
+                if ($data->order_id == "" || !$data->order_id)
                 return '<span class="badge badge-primary">'.$data->book_id.'</span>';
             })
             ->editColumn('stat', function ($data) {
@@ -273,7 +276,7 @@ class ListOrderController extends Controller
                 return '
                 <a href="javascript:void(0)" class="badge outline-badge-secondary trackingOrder" title="Tracking Order" data-id="'.$data->book_id.'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                    CLOSED
+                    SALES CONTRACT
                 </a>';
                 if ($data->stat == "X") 
                 return '
@@ -373,12 +376,12 @@ class ListOrderController extends Controller
 
             $data = DB::select(DB::raw("select DATE_FORMAT(a.tr_date, '%d %M %Y') as fr_date,
                     a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id
+                    a.cust_po_num, sum(c.amt_net) as amt_net, a.image, a.quote_id, a.order_id
                     from order_book_hdr a
                     left join salesman b on a.salesman_id = b.salesman_id
                     join order_book_dtl c on a.book_id = c.book_id $where
                     group by a.tr_date, a.book_id, a.stat, a.salesman_id, b.salesman_name, a.user_id, a.cust_id, a.cust_name, a.ship_to,
-                    a.cust_po_num, a.image, a.quote_id order by a.tr_date desc"));
+                    a.cust_po_num, a.image, a.quote_id, a.order_id order by a.tr_date desc"));
 
            return \DataTables::of($data)
            ->editColumn('book_id', function ($data) {
@@ -414,7 +417,7 @@ class ListOrderController extends Controller
                 return '
                 <a href="javascript:void(0)" class="badge outline-badge-secondary trackingOrder" title="Tracking Order" data-id="'.$data->book_id.'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                    CLOSED
+                    SALES CONTRACT
                 </a>';
                 if ($data->stat == "X") 
                 return '
