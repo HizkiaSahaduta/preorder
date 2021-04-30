@@ -1533,10 +1533,6 @@ class CreateOrderController extends Controller
         $countApproval = substr_count($listApproval,"A");
         $temp1_listApproval = explode(',', $listApproval);
 
-
-      
-
-
         try {
 
             $getPOID = DB::table('order_book_hdr')

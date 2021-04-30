@@ -1703,6 +1703,8 @@ $(document).ready(function() {
 
     $('#submitApproval').on('click', function() {
 
+        event.preventDefault();
+
         blockUI();
         
         var data = table2.$('select').serializeArray();
@@ -1733,16 +1735,16 @@ $(document).ready(function() {
                     
                     $.unblockUI();
                     swal("Whops", data['error'], "error")
-                    $('#TableListOrder').DataTable().ajax.reload();
-                    $('#OrderItemList').hide();
+                    $('#TableListOrder').DataTable().ajax.url('getListOrder').load();
+                    // $('#OrderItemList').hide();
                 }
 
                 else {
 
                     $.unblockUI();
                     swal("Success", data['response'], "success")
-                    $('#TableListOrder').DataTable().ajax.reload();
-                    $('#OrderItemList').hide();
+                    $('#TableListOrder').DataTable().ajax.url('getListOrder').load();
+                    // $('#OrderItemList').hide();
                 }
 
             }
